@@ -1,6 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
@@ -37,6 +39,7 @@ android {
     buildFeatures{
         viewBinding = true
     }
+
 }
 
 dependencies {
@@ -53,12 +56,16 @@ dependencies {
     val retrofitVersion = "2.9.0"
     val coroutines = "1.7.1"
 
+
     //Retrofit
     implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
     implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
     // Corrutine
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines")
 
+    val daggerHilt = "2.44"
+    implementation("com.google.dagger:hilt-android:$daggerHilt")
+    kapt("com.google.dagger:hilt-android-compiler:$daggerHilt")
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.11.0")
@@ -66,4 +73,7 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+
 }
+
