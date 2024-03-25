@@ -50,6 +50,14 @@ dependencies {
     // Activity
     implementation ("androidx.activity:activity-ktx:1.8.2")
 
+    val retrofitVersion = "2.9.0"
+    val coroutines = "1.7.1"
+
+    //Retrofit
+    implementation ("com.squareup.retrofit2:retrofit:$retrofitVersion")
+    implementation ("com.squareup.retrofit2:converter-gson:$retrofitVersion")
+    // Corrutine
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines")
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
